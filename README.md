@@ -8,11 +8,11 @@ Vamos a testear el formulario de login de [Acamica](https://www.acamica.com) en 
 Vamos a usar [Cypress](https://cypress.io), un framework de testing fácil de usar para testear cualquier cosa que corra en una web.
 
 ## Temario
-* Iniciando nuestro proyecto
-* Instalando Cypress
-* Corriendo Cypress
-* Escribiendo nuestros tests
-* Corriendo nuestros tests
+* [Iniciando nuestro proyecto](#iniciando-nuestro-proyecto)
+* [Instalando Cypress](#instalando-cypress)
+* [Corriendo Cypress](#corriendo-cypress)
+* [Escribiendo nuestros tests](#escribiendo-nuestros-tests)
+* [Corriendo nuestros tests](#corriendo-nuestros-tests)
 
 ### Iniciando nuestro proyecto
 Lo primero que vamos a hacer es crear una carpeta para nuestro proyecto, luego vamos a la terminal, nos paramos en la carpeta que acabamos de crear y ejecutamos:
