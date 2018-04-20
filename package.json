@@ -1,0 +1,13 @@
+{
+  "name": "acamica-cypress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test:open": "cypress open",
+    "test": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^2.1.0"
+  }
+}
