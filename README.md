@@ -24,8 +24,14 @@ Vamos a ver que se crea un nuevo archivo `package.json` en nuestra carpeta con u
 {
   "name": "<nombre-de-la-carpeta>",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "license": "MIT"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
 ```
 
@@ -37,7 +43,7 @@ npm install cypress --save-dev
 Eso va a instalar `Cypress` en nuestro proyecto y va a agregar la dependencia a nuestro `package.json`
 
 ### Corriendo Cypress
-Para abrir `Cypress` necesitamos agregar un `script` `test` a nuestro `package.json`, vamos a agregar esto al final del archivo:
+Para abrir `Cypress` necesitamos modificar el `script` `test` de nuestro `package.json`por lo siguiente:
 ```json
 "scripts": {
   "test": "cypress open"
@@ -97,7 +103,7 @@ describe('Formulario de login de Acamica', function () {
 Vamos a repasar las cosas que usamos para nuestros tests:
 * `describe`: Una función que proviene de [Mocha](https://mochajs.org/) y sirve meramente para agrupar nuestros tests en categorías
 * `it`: Otra función que proviene de [Mocha](https://mochajs.org/) y sirve para definir un nombre para cada test y definir que es lo que va a hacer
-* `before` / `beforeEach`: También provienen de [Mocha](https://mochajs.org/) y se llaman `hooks`, su función es se ejecutados en un tiempo determinado de nuestros tests, `before` se ejecuta una sola vez antes de correr todos nuestros tests y `beforeEach` se ejecuta antes de cada test
+* `before` / `beforeEach`: También provienen de [Mocha](https://mochajs.org/) y se llaman `hooks`, su función es ser ejecutados en un tiempo determinado de nuestros tests, `before` se ejecuta una sola vez antes de correr todos nuestros tests y `beforeEach` se ejecuta antes de cada test
 * `cy`: Funciones pertenecientes a `Cypress`
   * `.visit(url)`: Visita una URL
   * `.get(selector | alias)`: Nos permite obtener un elemento del DOM mediante un selector o alias
@@ -114,4 +120,4 @@ Si volvemos a la ventana de `Cypress` vamos a ver que nuestro nuevo archivo est�
 Si la interfaz gráfica te parece muy linda, pero preferís correr los tests mas rápido o desde consola, podes cambiar el script `test` de nuestro `package.json` para que en vez de ser `cypress open` sea `cypress run`. Esto además de correr nuestros tests en modo `headless`, va a guardar un video de los tests corriendo en `cypress/videos`
 
 ## Links útiles
-* [Documentación de `Cypress`](https://docs.cypress.io/api/introduction/api.htm)
+* [Documentación de `Cypress`](https://docs.cypress.io/api/introduction/api.html)
