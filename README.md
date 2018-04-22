@@ -49,7 +49,6 @@ Para abrir `Cypress` necesitamos modificar el `script` `test` de nuestro `packag
   "test": "cypress open"
 }
 ```
-> Asegurarse de que quede una coma al final de la linea anterior a `scripts`
 Una vez hecho esto, vamos a la terminal y ejecutamos:
 ```bash
 npm test
