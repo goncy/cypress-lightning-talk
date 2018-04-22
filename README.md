@@ -56,7 +56,7 @@ npm test
 Esto nos va a abrir `Cypress` y a su vez va a crear una carpeta `cypress` en nuestro proyecto junto a un archivo `cypress.json`
 
 ### Escribiendo nuestros tests
-Vamos a crear dentro de `cypress/integration` un archivo `acamica.test.js` con el siguiente contenido:
+Vamos a ir a la carpeta `cypress/integration`, vamos a borrar el archivo `example_spec.js` (el test por defecto) y vamos a crear uno nuevo llamado `acamica.test.js` con el siguiente contenido:
 
 ```javascript
 describe('Formulario de login de Acamica', function () {
