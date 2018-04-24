@@ -121,6 +121,7 @@ Si volvemos a la ventana de `Cypress` vamos a ver que nuestro nuevo archivo est�
 
 ### Bonus
 Si la interfaz gráfica te parece muy linda, pero preferís correr los tests mas rápido o desde consola, podes cambiar el script `test` de nuestro `package.json` para que en vez de ser `cypress open` sea `cypress run`. Esto además de correr nuestros tests en modo `headless`, va a guardar un video de los tests corriendo en `cypress/videos`
+> Tip: Para terminar el proceso de los tests presioná `ctrl + c` en la terminal donde se está ejecutando
 
 ## Links útiles
 * [Documentación de `Cypress`](https://docs.cypress.io/api/introduction/api.html)
