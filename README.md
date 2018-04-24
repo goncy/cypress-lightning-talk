@@ -11,6 +11,17 @@ Vamos a testear el formulario de login de [Acamica](https://www.acamica.com) en 
 ## Como lo vamos a hacer?
 Vamos a usar [Cypress](https://cypress.io), un framework de testing fácil de usar para testear cualquier cosa que corra en una web.
 
+## Requisitos
+* Cualquier editor de texto, recomiendo [Visual Studio Code](https://code.visualstudio.com/).
+* [Node.js](https://nodejs.org/es/) instalado, con `npm` en la última versión estable.
+
+> *Tip*: Para ver que versión de `npm` tenes instalada, una vez que tengas instalado `node`, en consola corré: `npm -v`.
+> Para instalar la última versión estable de `npm` corré: `npm install -g npm`.
+> Agregá `sudo` al principio si te da problema de permisos al instalar en `Linux` o `Mac`.
+
+## Recomendable
+* Experiencia básica con `JavaScript`
+
 ## Temario
 * [Iniciando nuestro proyecto](#iniciando-nuestro-proyecto)
 * [Instalando Cypress](#instalando-cypress)
