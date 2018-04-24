@@ -2,7 +2,11 @@
 Esta es una lighting talk preparada para dar en el domo de [Acamica](https://acamica.com.ar) en la [Campus Party 2018](http://argentina.campus-party.org/).
 
 ## Que vamos a hacer?
-Vamos a testear el formulario de login de [Acamica](https://www.acamica.com) en 5 / 10 minutos.
+Vamos a testear el formulario de login de [Acamica](https://www.acamica.com) en 5 / 10 minutos. Los tests van a incluir:
+* El botón de iniciar sesión esta deshabilitado al no tener datos
+* El botón de iniciar sesión esta deshabilitado al ingresar un mail incorrecto
+* El botón de iniciar sesión esta deshabilitado al no ingresar una contraseña
+* Cierra el formulario de login
 
 ## Como lo vamos a hacer?
 Vamos a usar [Cypress](https://cypress.io), un framework de testing fácil de usar para testear cualquier cosa que corra en una web.
