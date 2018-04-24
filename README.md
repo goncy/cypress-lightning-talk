@@ -1,5 +1,5 @@
 # Testeando features en 5 minutos con Cypress
-Esta es una lighting talk preparada para dar en el domo de [Acamica](https://acamica.com.ar) en la [Campus Party 2018](http://argentina.campus-party.org/).
+Esta es una lightning talk preparada para dar en el domo de [Acamica](https://acamica.com.ar) en la [Campus Party 2018](http://argentina.campus-party.org/).
 
 ## Que vamos a hacer?
 Vamos a testear el formulario de login de [Acamica](https://www.acamica.com) en 5 / 10 minutos. Los tests van a incluir:
