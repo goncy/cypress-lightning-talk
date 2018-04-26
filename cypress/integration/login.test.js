@@ -21,13 +21,13 @@ describe('Formulario de login de Acamica', function () {
   })
 
   it('el botón de iniciar sesión esta deshabilitado al ingresar un mail incorrecto', function () {
-    cy.get('@email').type('not-valid')
-    cy.get('@password').type('a-valid-password')
+    cy.get('@email').type('esto no es un email')
+    cy.get('@password').type('una_contr4se3ña')
     cy.get('@submit').should('be.disabled')
   })
 
   it('el botón de iniciar sesión esta deshabilitado al no ingresar una contraseña', function () {
-    cy.get('@email').type('valid@acamica.com')
+    cy.get('@email').type('mi-correo@acamica.com')
     cy.get('@submit').should('be.disabled')
   })
 
