@@ -20,7 +20,7 @@ Vamos a usar [Cypress](https://cypress.io), un framework de testing fácil de us
 > Agregá `sudo` al principio si te da problema de permisos al instalar en `Linux` o `Mac`.
 
 ## Recomendable
-* Experiencia básica con `JavaScript`
+* Conocimiento básica de `JavaScript`
 
 ## Temario
 * [Iniciando nuestro proyecto](#iniciando-nuestro-proyecto)
@@ -115,9 +115,9 @@ describe('Formulario de login de Acamica', function () {
 ```
 
 Vamos a repasar las cosas que usamos para nuestros tests:
-* `describe`: Una función que proviene de [Mocha](https://mochajs.org/) y sirve meramente para agrupar nuestros tests en categorías
-* `it`: Otra función que proviene de [Mocha](https://mochajs.org/) y sirve para definir un nombre y que es lo que va a hacer cada test
-* `before` / `beforeEach`: También provienen de [Mocha](https://mochajs.org/) y se llaman `hooks`, su función es ser ejecutados en un tiempo determinado de nuestros tests, `before` se ejecuta una sola vez antes de correr todos nuestros tests y `beforeEach` se ejecuta antes de cada test
+* `describe`: Sirve para agrupar nuestros tests en categorías
+* `it`: Sirve para definir un nombre para nuestro test
+* `before` / `beforeEach`: Ambos son `hooks`, su función es ser ejecutados en un tiempo determinado de nuestros tests, `before` se ejecuta una sola vez antes de correr todos nuestros tests y `beforeEach` se ejecuta antes de cada test
 * `cy`: Funciones pertenecientes a `Cypress`
   * `.visit(url)`: Visita una URL
   * `.get(selector | alias)`: Nos permite obtener un elemento del DOM mediante un selector o alias
