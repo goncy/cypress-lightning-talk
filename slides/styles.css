@@ -1,0 +1,80 @@
+html {
+  font-size: 26px;
+}
+
+body {
+  background: rgb(85,0,255);
+  background: linear-gradient(90deg, rgba(85,0,255,1) 0%, rgba(129,65,255,1) 100%);
+  color: white;
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: .9rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0;
+}
+
+h1, h2, h3, ul, li, p {
+  max-width: 860px !important;
+  margin: auto !important;
+}
+
+h1 {
+  margin-bottom: .5rem !important;
+}
+
+.big {
+  font-size: 2.5rem !important;
+}
+
+.small {
+  font-size: .75rem !important;  
+}
+
+.thin {
+  font-weight: 100 !important;
+}
+
+.regular {
+  font-weight: 300 !important;
+}
+
+.medium {
+  font-weight: 400 !important;
+}
+
+.bold {
+  font-weight: 500 !important;
+}
+
+.black {
+  font-weight: 700 !important;
+}
+
+.controls {
+  color: white !important;
+}
+
+ul {
+  width: fit-content !important;
+  text-align: left !important;
+  margin: 32px auto !important;
+}
+
+li {
+  margin: 12px 0 !important;
+  width: fit-content !important;
+}
+
+.hljs {
+  max-width: 640px !important;
+  padding: 0.5em !important;
+  text-align: left !important;
+  line-height: 1.25em !important;
+  margin: auto !important;
+}
+
+.full-code {
+  font-size: 0.5rem !important;
+  max-width: 100% !important;
+}

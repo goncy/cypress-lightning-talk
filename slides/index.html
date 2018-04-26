@@ -1,0 +1,182 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="vendors/reveal/css/reveal.css">
+		<link rel="stylesheet" href="vendors/reveal/lib/css/zenburn.css">
+    <link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+          <h1 class="big bold">Gonzalo Pozzo</h1>
+          <h3 class="thin">React developer <span class="medium">@TheNextAd</span></h3>
+        </section>
+				<section>
+          <h1 class="big regular">Testeando features en <span class="bold">5 minutos</span> con <span class="bold">Cypress</span></h1>
+        </section>
+        <section>
+          <h1 class="big bold">Que vamos a hacer?</h1>
+          <p class="fragment">Vamos a testear el formulario de login de Acamica</p>
+          <ul class="small">
+            <li class="fragment">El botón de iniciar sesión esta deshabilitado al no tener datos</li>
+            <li class="fragment">El botón de iniciar sesión esta deshabilitado al ingresar un mail incorrecto</li>
+            <li class="fragment">El botón de iniciar sesión esta deshabilitado al no ingresar una contraseña</li>
+            <li class="fragment">Cierra el formulario de login</li>
+          </ul>
+        </section>
+        <section>
+          <h1 class="big bold">Como lo vamos a hacer?</h1>
+        </section>
+        <section>
+          <h1 class="big bold">Cypress</h1>
+          <p class="fragment">Un framework de testing fácil de usar para testear cualquier cosa que corra en una web</p>
+        </section>
+        <section>
+          <h1 class="big bold">Requisitos</h1>
+          <ul class="small">
+            <li class="fragment">Cualquier editor de texto, recomiendo <span class="bold">Visual Studio Code</span></li>
+            <li class="fragment"><span class="bold">Node.js</span> instalado, con <span class="bold">npm</span> en la última versión estable</li>
+          </ul>
+        </section>
+        <section>
+          <h1 class="big bold">Recomendable</h1>
+          <ul class="small">
+            <li class="fragment">Experiencia básica con <span class="bold">JavaScript</span></li>
+          </ul>
+        </section>
+        <section>
+          <h1 class="big bold">Iniciando nuestro proyecto</h1>
+          <p>Parados en la carpeta de nuestro proyecto ejecutamos:</p>
+          <pre>
+            <code data-trim data-noescape>
+              npm init -y
+            </code>
+          </pre>
+        </section>
+        <section>
+          <h1 class="big bold">Instalando <span class="bold">Cypress</span></h1>
+          <pre>
+            <code data-trim data-noescape>
+              npm install cypress --save-dev
+            </code>
+          </pre>
+        </section>
+        <section>
+          <h1 class="big bold">Corriendo <span class="bold">Cypress</span></h1>
+          <p>Modificamos el script <span class="bold">test</span> en nuestro <span class="bold">package.json</span></p>
+          <pre>
+            <code data-trim data-noescape>
+              "scripts": {
+                "test": "cypress open"
+              }
+            </code>
+          </pre>
+          <div class="fragment">
+            <p>Luego ejecutamos</p>
+            <pre>
+              <code data-trim data-noescape>
+                npm test
+              </code>
+            </pre>
+          </div>
+        </section>
+        <section>
+          <h1 class="big bold">Escribiendo nuestros tests</h1>
+          <p>Borramos el archivo <span class="bold">example_spec.js</span> (el test por defecto) de la carpeta <span class="bold">cypress/integration</span> y vamos a crear uno nuevo llamado <span class="bold">acamica.test.js</span> con lo siguiente</p>
+        </section>
+        <section>
+          <pre>
+            <code data-trim data-noescape class="full-code">
+              describe('Formulario de login de Acamica', function () {
+                before(function () {
+                  cy.visit('https://www.acamica.com/') // Navegamos a la web de Acamica
+                  cy.get('.button[ac-auth-dialog]').click() // Clickeamos el botón de login para mostrar el modal
+                })
+              
+                beforeEach(function() {
+                  // Nos guardamos en aliases todos los botones que vamos a usar
+                  cy.get('.modal-body [name="email"]').as('email')
+                  cy.get('.modal-body [name="password"]').as('password')
+                  cy.get('.modal-footer [type="submit"]').as('submit')
+                  cy.get('.modal-footer [type="button"]').as('cancel')
+              
+                  // Limpiamos los inputs de email y password antes de cada test
+                  cy.get('@email').clear()
+                  cy.get('@password').clear()
+                })
+              
+                it('el botón de iniciar sesión esta deshabilitado al no tener datos', function () {
+                  cy.get('@submit').should('be.disabled')
+                })
+              
+                it('el botón de iniciar sesión esta deshabilitado al ingresar un mail incorrecto', function () {
+                  cy.get('@email').type('not-valid')
+                  cy.get('@password').type('a-valid-password')
+                  cy.get('@submit').should('be.disabled')
+                })
+              
+                it('el botón de iniciar sesión esta deshabilitado al no ingresar una contraseña', function () {
+                  cy.get('@email').type('valid@acamica.com')
+                  cy.get('@submit').should('be.disabled')
+                })
+              
+                it('cierra el formulario de login', function () {
+                    cy.get('@cancel').click()
+                    cy.get('.modal').should('not.exist')
+                })
+              })
+            </code>
+          </pre>
+        </section>
+        <section>
+          <h1 class="big bold">Descriptores</h1>
+          <p>Su función es meramente descriptiva</p>
+          <ul>
+            <li class="fragment"><span class="bold">describe</span>: Una función que proviene de Mocha y sirve para agrupar nuestros tests en categorías</li>
+            <li class="fragment"><span class="bold">it</span>: Otra función que proviene de Mocha y sirve para definir un nombre y que es lo que va a hacer cada test</li>
+          </ul>
+        </section>
+        <section>
+          <h1 class="big bold">Hooks</h1>
+          <p>Su función es ser ejecutados en un tiempo determinado de nuestros tests</p>
+          <ul>
+            <li class="fragment"><span class="bold">before</span>: Se ejecuta una sola vez antes de correr todos nuestros tests</li>
+            <li class="fragment"><span class="bold">beforeEach</span>: Se ejecuta antes de cada test</li>
+          </ul>
+        </section>
+        <section>
+          <h1 class="big bold">Cy</h1>
+          <p>Funciones integradas en <span class="bold">Cypress</span></p>
+          <ul>
+            <li class="fragment"><span class="bold">.visit</span>: Visita una URL</li>
+            <li class="fragment"><span class="bold">.get(selector | alias)</span>: Nos permite obtener un elemento del DOM mediante un selector o alias</li>
+            <ul>
+              <li class="fragment"><span class="bold">.click()</span>: Clickea un elemento</li>
+              <li class="fragment"><span class="bold">.type(texto)</span>: Escribe un valor a un elemento</li>
+              <li class="fragment"><span class="bold">.clear()</span>: Limpia el contenido de un elemento</li>
+              <li class="fragment"><span class="bold">.as(nombre)</span>: Guarda la referencia a un elemento bajo un alias</li>
+              <li class="fragment"><span class="bold">.should(afirmación)</span>: Espera una afirmación sobre un elemento, en caso de ser falsa, el test falla</li>
+            </ul>
+          </ul>
+        </section>
+        <section>
+          <h1 class="big bold">
+            Eso fue todo, felicitaciones!
+          </h1>
+          <p>Ya tenés tu primer feature testeado con <span class="bold">Cypress</span></p>
+        </section>
+			</div>
+    </div>
+    <script src="vendors/reveal/lib/js/head.min.js"></script>    
+    <script src="vendors/reveal/js/reveal.js"></script>    
+    <script>
+			Reveal.initialize({
+        dependencies: [
+          { src: './vendors/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: './vendors/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: './vendors/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        ]
+      });
+		</script>
+	</body>
+</html>

@@ -2,7 +2,7 @@
 Esta es una lightning talk preparada para dar en el domo de [Acamica](https://acamica.com.ar) en la [Campus Party 2018](http://argentina.campus-party.org/).
 
 ## Que vamos a hacer?
-Vamos a testear el formulario de login de [Acamica](https://www.acamica.com) en 5 / 10 minutos. Los tests van a incluir:
+Vamos a testear el formulario de login de [Acamica](https://www.acamica.com). Los tests van a incluir:
 * El botón de iniciar sesión esta deshabilitado al no tener datos
 * El botón de iniciar sesión esta deshabilitado al ingresar un mail incorrecto
 * El botón de iniciar sesión esta deshabilitado al no ingresar una contraseña
@@ -116,7 +116,7 @@ describe('Formulario de login de Acamica', function () {
 
 Vamos a repasar las cosas que usamos para nuestros tests:
 * `describe`: Una función que proviene de [Mocha](https://mochajs.org/) y sirve meramente para agrupar nuestros tests en categorías
-* `it`: Otra función que proviene de [Mocha](https://mochajs.org/) y sirve para definir un nombre para cada test y definir que es lo que va a hacer
+* `it`: Otra función que proviene de [Mocha](https://mochajs.org/) y sirve para definir un nombre y que es lo que va a hacer cada test
 * `before` / `beforeEach`: También provienen de [Mocha](https://mochajs.org/) y se llaman `hooks`, su función es ser ejecutados en un tiempo determinado de nuestros tests, `before` se ejecuta una sola vez antes de correr todos nuestros tests y `beforeEach` se ejecuta antes de cada test
 * `cy`: Funciones pertenecientes a `Cypress`
   * `.visit(url)`: Visita una URL
