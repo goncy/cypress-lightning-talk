@@ -20,7 +20,7 @@ Vamos a usar [Cypress](https://cypress.io), un framework de testing fácil de us
 > Agregá `sudo` al principio si te da problema de permisos al instalar en `Linux` o `Mac`.
 
 ## Recomendable
-* Conocimiento básica de `JavaScript`
+* Conocimiento básico de `JavaScript`
 
 ## Temario
 * [Iniciando nuestro proyecto](#iniciando-nuestro-proyecto)
