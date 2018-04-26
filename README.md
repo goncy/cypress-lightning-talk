@@ -137,3 +137,4 @@ Si la interfaz gráfica te parece muy linda, pero preferís correr los tests mas
 ## Links útiles
 * [Documentación de `Cypress`](https://docs.cypress.io/api/introduction/api.html)
 * [Mi otra lección de `Cypress`](https://github.com/goncy/cypress-lesson)
+* [Slides de la charla](https://cypress-lightning-talk.netlify.com/)
